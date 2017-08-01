@@ -61,6 +61,6 @@ All methods accept a `$data` parameter. This can be any data which can be used i
 | `teapot($data)`               | 418           |
 | `unprocessable_entity($data)` | 422           |
 
-### Custom error code
+### Custom response (code)
 
 If you'd wish to send a status code which is not in the list you could use the `json_response($data = null, $status = 200)` helper function. [Here](https://www.cheatography.com/kstep/cheat-sheets/http-status-codes/) you can find a cheat sheet for HTTP status codes or use [http.cat](https://http.cat).
