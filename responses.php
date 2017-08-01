@@ -138,7 +138,7 @@ if (! function_exists('teapot')) {
      * @param  mixed  $data
      * @return \Illuminate\Http\JsonResponse
      */
-    function unproccessable_entity($data = null)
+    function teapot($data = null)
     {
         return json_response($data, 418);
     }
