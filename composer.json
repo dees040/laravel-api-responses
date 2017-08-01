@@ -1,0 +1,20 @@
+{
+    "name": "dees040/laravel-api-responses",
+    "description": "Helper methods for Laravel API Responses",
+    "authors": [
+        {
+            "name": "dees040",
+            "email": "d.oomens@hotmail.nl"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/foundation": "^5.0,<5.5"
+    },
+    "autoload": {
+        "files": [
+            "responses.php"
+        ]
+    }
+}
