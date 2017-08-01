@@ -2,6 +2,14 @@
 
 A small package for returning an API response easily.
 
+## Installation
+
+Install the package via Composer.
+
+`composer require dees040/laravel-api-responses`
+
+You're ready to go!
+
 ## Usage
 
 Just use one of the helper functions and you're good to go.
