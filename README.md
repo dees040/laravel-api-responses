@@ -6,7 +6,9 @@ A small package for returning an API response easily.
 
 Install the package via Composer.
 
-`composer require dees040/laravel-api-responses`
+```bash
+composer require dees040/laravel-api-responses
+```
 
 You're ready to go!
 
