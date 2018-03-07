@@ -4,13 +4,30 @@ if (! function_exists('json_response')) {
     /**
      * Return a new JSON response.
      *
-     * @param  mixed  $data
+     * @param  string|array  $data
      * @param  int  $status
+     * @param  array  $headers
+     * @param  int  $options
      * @return \Illuminate\Http\JsonResponse
      */
-    function json_response($data = null, $status = 200)
+    function json_response($data = null, $status = 200, array $headers = [], $options = 0)
     {
-        return response()->json($data, $status);
+        return new \Illuminate\Http\JsonResponse($data, $status, $headers, $options);
+    }
+}
+
+if (! function_exists('error_json_response')) {
+    /**
+     * Return a new error (4xx) response.
+     *
+     * @param  string  $message
+     * @param  array  $errors
+     * @param  int  $code
+     * @return \Illuminate\Http\JsonResponse
+     */
+    function error_json_response($message = '', $errors = [], $code)
+    {
+        return json_response(compact('message', 'errors'), $code);
     }
 }
 
@@ -49,7 +66,19 @@ if (! function_exists('accepted')) {
      */
     function accepted($data = null)
     {
-        return json_response($data, 201);
+        return json_response($data, 202);
+    }
+}
+
+if (! function_exists('no_content')) {
+    /**
+     * Return no content response.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    function no_content()
+    {
+        return json_response(null, 204);
     }
 }
 
@@ -57,12 +86,13 @@ if (! function_exists('bad_request')) {
     /**
      * Return a bad request response.
      *
-     * @param  mixed  $data
+     * @param  string  $message
+     * @param  array  $errors
      * @return \Illuminate\Http\JsonResponse
      */
-    function bad_request($data = null)
+    function bad_request($message = '', $errors = [])
     {
-        return json_response($data, 400);
+        return error_json_response($message, $errors, 400);
     }
 }
 
@@ -70,12 +100,13 @@ if (! function_exists('unauthenticated')) {
     /**
      * Return a unauthenticated response.
      *
-     * @param  mixed  $data
+     * @param  string  $message
+     * @param  array  $errors
      * @return \Illuminate\Http\JsonResponse
      */
-    function unauthenticated($data = null)
+    function unauthenticated($message = '', $errors = [])
     {
-        return json_response($data, 401);
+        return error_json_response($message, $errors, 401);
     }
 }
 
@@ -83,12 +114,13 @@ if (! function_exists('forbidden')) {
     /**
      * Return a forbidden response.
      *
-     * @param  mixed  $data
+     * @param  string  $message
+     * @param  array  $errors
      * @return \Illuminate\Http\JsonResponse
      */
-    function forbidden($data = null)
+    function forbidden($message = '', $errors = [])
     {
-        return json_response($data, 403);
+        return error_json_response($message, $errors, 403);
     }
 }
 
@@ -96,12 +128,13 @@ if (! function_exists('not_found')) {
     /**
      * Return a not found response.
      *
-     * @param  mixed  $data
+     * @param  string  $message
+     * @param  array  $errors
      * @return \Illuminate\Http\JsonResponse
      */
-    function not_found($data = null)
+    function not_found($message = '', $errors = [])
     {
-        return json_response($data, 404);
+        return error_json_response($message, $errors, 404);
     }
 }
 
@@ -109,12 +142,13 @@ if (! function_exists('method_not_allowed')) {
     /**
      * Return a method not allowed response.
      *
-     * @param  mixed  $data
+     * @param  string  $message
+     * @param  array  $errors
      * @return \Illuminate\Http\JsonResponse
      */
-    function method_not_allowed($data = null)
+    function method_not_allowed($message = '', $errors = [])
     {
-        return json_response($data, 405);
+        return error_json_response($message, $errors, 405);
     }
 }
 
@@ -122,12 +156,13 @@ if (! function_exists('not_acceptable')) {
     /**
      * Return a not acceptable response.
      *
-     * @param  mixed  $data
+     * @param  string  $message
+     * @param  array  $errors
      * @return \Illuminate\Http\JsonResponse
      */
-    function not_acceptable($data = null)
+    function not_acceptable($message = '', $errors = [])
     {
-        return json_response($data, 406);
+        return error_json_response($message, $errors, 406);
     }
 }
 
@@ -135,12 +170,13 @@ if (! function_exists('teapot')) {
     /**
      * All hail the magical teapot response.
      *
-     * @param  mixed  $data
+     * @param  string  $message
+     * @param  array  $errors
      * @return \Illuminate\Http\JsonResponse
      */
-    function teapot($data = null)
+    function teapot($message = '', $errors = [])
     {
-        return json_response($data, 418);
+        return error_json_response($message, $errors, 418);
     }
 }
 
@@ -148,11 +184,12 @@ if (! function_exists('unprocessable_entity')) {
     /**
      * Return a unprocessable entity response.
      *
-     * @param  mixed  $data
+     * @param  string  $message
+     * @param  array  $errors
      * @return \Illuminate\Http\JsonResponse
      */
-    function unprocessable_entity($data = null)
+    function unprocessable_entity($message = '', $errors = [])
     {
-        return json_response($data, 422);
+        return error_json_response($message, $errors, 422);
     }
 }
