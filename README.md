@@ -70,3 +70,22 @@ All methods accept a `$data` parameter. This can be any data which can be used i
 ### Custom response (code)
 
 If you'd wish to send a status code which is not in the list you could use the `json_response($data = null, $status = 200)` helper function. [Here](https://www.cheatography.com/kstep/cheat-sheets/http-status-codes/) you can find a cheat sheet for HTTP status codes or use my personal favorite [http.cat](https://http.cat) 😉.
+
+If you want to send error response you can use the `error_json_response($message = '', $errors = [], $status = 400)`. This method will send an json response like this:
+
+```php
+error_json_response('User not found.', [
+    'id' => 'The ID does not exists.'
+]);
+```
+
+Output:
+
+```json
+{
+  "message": "User not found.",
+  "errors": {
+    "id": "The ID does not exists."
+  }
+}
+```

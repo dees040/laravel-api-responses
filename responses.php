@@ -25,7 +25,7 @@ if (! function_exists('error_json_response')) {
      * @param  int  $code
      * @return \Illuminate\Http\JsonResponse
      */
-    function error_json_response($message = '', $errors = [], $code)
+    function error_json_response($message = '', $errors = [], $code = 400)
     {
         return json_response(compact('message', 'errors'), $code);
     }
