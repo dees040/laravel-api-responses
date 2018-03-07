@@ -109,4 +109,17 @@ class ResponseTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals(422, $response->status());
     }
+
+    /** @test */
+    public function it_returns_a_correct_format_on_errors_message()
+    {
+        $response = bad_request('User not found');
+
+        $data = (array) $response->getData();
+
+        $this->assertArraySubset([
+            'message' => 'User not found',
+            'errors' => [],
+        ], $data);
+    }
 }
