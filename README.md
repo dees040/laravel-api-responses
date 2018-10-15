@@ -6,7 +6,7 @@
 <a href="https://travis-ci.org/dees040/laravel-api-responses"><img src="https://travis-ci.org/dees040/laravel-api-responses.svg?branch=master" alt="Build status"></a>
 </p>
 
-A very small package to easily returning readable API responses.
+A very small package which helps you to easily returning readable API responses.
 
 ## Installation
 
