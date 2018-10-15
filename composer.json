@@ -25,5 +25,8 @@
         "classmap": [
             "tests"
         ]
+    },
+    "config": {
+        "discard-changes": true
     }
 }
