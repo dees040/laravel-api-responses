@@ -3,6 +3,7 @@
 <p align="center">
 <a href="https://packagist.org/packages/dees040/laravel-api-responses"><img src="https://poser.pugx.org/dees040/laravel-api-responses/v/stable" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/dees040/laravel-api-responses"><img src="https://poser.pugx.org/dees040/laravel-api-responses/downloads" alt="Total Downloads"></a>
+<a href="https://travis-ci.org/dees040/laravel-api-responses"><img src="https://travis-ci.org/dees040/laravel-api-responses.svg?branch=master" alt="Build status"></a>
 </p>
 
 A small package for returning an API response easily.
