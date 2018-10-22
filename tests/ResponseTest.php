@@ -3,8 +3,9 @@
 namespace Tests;
 
 use Illuminate\Http\JsonResponse;
+use PHPUnit\Framework\TestCase;
 
-class ResponseTest extends \PHPUnit_Framework_TestCase
+class ResponseTest extends TestCase
 {
     /** @test */
     public function it_returns_a_response()
