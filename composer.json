@@ -9,9 +9,8 @@
     ],
     "license": "MIT",
     "require": {
-        "php": ">=5.5.0",
-        "illuminate/http": "~5.0",
-        "illuminate/routing": "~5.0"
+        "illuminate/http": "~5.0|~6.0",
+        "illuminate/routing": "~5.0|~6.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~5.0"
