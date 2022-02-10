@@ -5,7 +5,7 @@ namespace Tests;
 use Illuminate\Http\JsonResponse;
 use PHPUnit\Framework\TestCase;
 
-class ResponseTest extends TestCase
+class ResponseTest extends TestCase 
 {
     /** @test */
     public function it_returns_a_response()
@@ -118,7 +118,7 @@ class ResponseTest extends TestCase
 
         $data = (array) $response->getData();
 
-        $this->assertArraySubset([
+        $this->assertEquals([
             'message' => 'User not found',
             'errors' => [],
         ], $data);
